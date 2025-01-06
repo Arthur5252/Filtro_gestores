@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Captura de Informações de Notícias</title>
+</head>
+<body>
+    <h2>Preencha os Dados para Filtrar e Receber Notícias</h2>
+    <form action="/processa" method="POST">
+        <label for="destinatario_email">Destinatários (separados por vírgula):</label>
+        <input type="text" id="destinatario_email" name="destinatario_email" required><br><br>
+
+        <label for="palavras_chave">Palavras-chave (separadas por vírgula):</label>
+        <input type="text" id="palavras_chave" name="palavras_chave" required><br><br>
+
+        <label for="data_inicio">Data de Início (AAAA-MM-DD):</label>
+        <input type="date" id="data_inicio" name="data_inicio" required><br><br>
+
+        <label for="data_fim">Data de Fim (AAAA-MM-DD):</label>
+        <input type="date" id="data_fim" name="data_fim" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
