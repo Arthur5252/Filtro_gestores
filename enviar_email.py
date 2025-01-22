@@ -11,10 +11,11 @@ logger = logging.getLogger(__name__)
 
 def envia_email(destinatario_email, local_pdf):
     # Configurações do e-mail
-    smtp_server = 'smtp.gmail.com'
+    smtp_server = 'smtp.hostinger.com'
     port = 587
-    sender_email = 'arthur.lima.araujoo@gmail.com'
-    password = 'mfvjmfgsxrvjioha'
+    sender_email = 'OctopusTAX <noreply@octopustax.com.br>'
+    username= 'noreply@octopustax.com.br'
+    password = '#Sdn7and7slv5'
 
     # Criação do e-mail
     subject = 'Relatório de noticias'
@@ -42,7 +43,7 @@ def envia_email(destinatario_email, local_pdf):
         # Envio do e-mail
         with smtplib.SMTP(smtp_server, port) as server:
             server.starttls()
-            server.login(sender_email, password)
+            server.login(username, password)
             server.sendmail(sender_email, destinatario_email, message.as_string())
             logger.info(f"E-mail enviado com sucesso para {destinatario_email}.")
     

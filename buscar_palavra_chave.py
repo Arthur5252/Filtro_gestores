@@ -7,33 +7,37 @@ import json
 logger = logging.getLogger(__name__)
 
 def filtra_noticias(palavras_chave, data_fixa):
-    # Lista para armazenar as notícias que contêm as palavras-chave e são a partir da data fixa
+    # Lista para armazenar as notícias filtradas
     noticias_filtradas = []
-    data_atual = datetime.now().strftime('%d/%m/%Y')
-
+    
     try:
-        logger.info(f"Iniciando o processo de filtragem de notícias para a data {data_atual}.")
+        logger.info(f"Iniciando o processo de filtragem de notícias para a data {data_fixa}.")
 
         noticias = obter_noticias()  # Função que obtém as notícias
         logger.info(f"Obtidas {len(noticias)} notícias para o filtro.")
+
+        # Converter a data fixa para o formato correto
+        data_fixa_obj = datetime.strptime(data_fixa, "%d/%m/%Y")
 
         # Percorre a lista de notícias
         for noticia in noticias:
             try:
                 # Junta o título e o conteúdo para facilitar a busca
-                texto = f"{noticia['titulo']} {noticia['conteudo']}".lower().replace('‘', '')
-                
-                # Verifica se a palavra-chave está no texto
+                texto = f"{noticia['titulo']} {noticia['conteudo']}".lower()
+
+                # Verifica se alguma palavra-chave está no texto
                 if any(palavra.lower() in texto for palavra in palavras_chave):
-                    # Converte a data da notícia para objeto datetime
+                    # Converte a data da notícia para objeto datetime (formato %d/%m/%Y)
                     data_noticia_obj = datetime.strptime(noticia['data'], "%d/%m/%Y")
                     
                     # Verifica se a data da notícia é a partir da data fixa
-                    if data_noticia_obj == data_atual:
+                    if data_noticia_obj >= data_fixa_obj:
                         noticias_filtradas.append(noticia)
             
             except KeyError as e:
                 logger.error(f"Erro ao processar notícia. Chave ausente: {e}")
+            except ValueError as e:
+                logger.error(f"Erro ao converter data: {str(e)}")
             except Exception as e:
                 logger.error(f"Erro inesperado ao processar a notícia: {str(e)}")
 
@@ -50,4 +54,3 @@ def filtra_noticias(palavras_chave, data_fixa):
     except Exception as e:
         logger.error(f"Erro ao tentar filtrar as notícias: {str(e)}")
         return []
-

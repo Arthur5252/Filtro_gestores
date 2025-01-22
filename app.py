@@ -35,13 +35,22 @@ def get_frutas():
 def processar():
     app.logger.info("Iniciando o processamento de envio de emails.")
     local_pdf = 'relatorio_noticias.pdf'
-    emails_palavras = get_emails_and_keywords()
-    data_atual = datetime.now().strftime('%Y-%m-%d')
+    emails_palavras = get_email_and_keywords()
+    data_atual = datetime.now().strftime('%d-%m-%Y').replace('-',"/")
+    print(data_atual)
     
-    for email, palavra_chave in emails_palavras.items():
+    for item in emails_palavras:
+        email = item['email']
+        palavras_chave = item['keywords']
+        
+        # Dividir palavras-chave por vírgula e remover espaços em branco
+        lista_palavras_chave = [palavra.strip() for palavra in palavras_chave.split(',')]
+        print(lista_palavras_chave)
+        logging.info(lista_palavras_chave)
+        
         try:
-            app.logger.info(f"Filtrando notícias para o email: {email} com palavras-chave: {palavra_chave}")
-            noticias_filtradas = filtra_noticias(palavra_chave, data_atual)
+            app.logger.info(f"Filtrando notícias para o email: {email} com palavras-chave: {lista_palavras_chave}")
+            noticias_filtradas = filtra_noticias(lista_palavras_chave, data_atual)
             gera_pdf(noticias=noticias_filtradas)
             envia_email(email, local_pdf)
             os.remove(local_pdf)
@@ -49,7 +58,8 @@ def processar():
         except Exception as e:
             app.logger.error(f"Erro ao processar para o email {email}: {str(e)}")
     
-    return 'Email enviado'
+    return 'Emails enviados!'
+
 
 # Adicionar endpoint para remover usuário do banco
 @app.route('/delete', methods=['POST'])
@@ -96,7 +106,3 @@ def register():
         app.logger.error(f"Erro ao tentar registrar assinantes: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    init_db()  # Garantir que o banco está inicializado
-    app.logger.info("Banco de dados inicializado com sucesso.")
-    app.run(debug=True)
