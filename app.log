@@ -1,3 +1,65 @@
-2025-01-22 17:59:50,583 - INFO - Banco de dados inicializado com sucesso.
-2025-01-22 17:59:50,599 - WARNING -  * Debugger is active!
-2025-01-22 17:59:50,602 - INFO -  * Debugger PIN: 921-011-093
+2025-01-22 18:10:36,794 - INFO - Inicializando o cliente Eureka...
+2025-01-22 18:10:36,794 - INFO - Porta aleatória gerada: 40044
+2025-01-22 18:10:37,455 - INFO - Cliente Eureka inicializado com sucesso.
+2025-01-22 18:10:37,471 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:40044
+ * Running on http://192.168.1.94:40044
+2025-01-22 18:10:37,471 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-22 18:11:07,989 - INFO - Iniciando o processamento de envio de emails.
+2025-01-22 18:11:09,422 - INFO - email e palavras-chave recuperados com sucesso.
+2025-01-22 18:11:09,423 - INFO - ['Civil', 'IVA', 'stock']
+2025-01-22 18:11:09,423 - INFO - Filtrando notícias para o email: sidineiandradesilva@gmail.com com palavras-chave: ['Civil', 'IVA', 'stock']
+2025-01-22 18:11:09,424 - INFO - Iniciando o processo de filtragem de notícias para a data 22/01/2025.
+2025-01-22 18:11:11,335 - INFO - Obtidas 345 notícias para o filtro.
+2025-01-22 18:11:11,351 - INFO - 9 notícias filtradas e salvas no arquivo 'noticias_filtradas.json'.
+2025-01-22 18:11:11,757 - INFO - Página de rosto criada com sucesso.
+2025-01-22 18:11:19,420 - INFO - Imagem inserida para a notícia: Reforma x carga tributária dos novos tributos sobre consumo
+2025-01-22 18:11:19,423 - INFO - Imagem inserida para a notícia: De voto vencido no Carf a vencedor no STJ: a tributação das employee stock options
+2025-01-22 18:11:19,437 - INFO - Imagem inserida para a notícia: Acesso a dados bancários pelo Fisco: desafios da falta de regulamentação estadual e o uso indevido de dados
+2025-01-22 18:11:19,442 - INFO - Imagem inserida para a notícia: Senado pode alterar limites para enquadramento no Simples
+2025-01-22 18:11:19,444 - INFO - Imagem inserida para a notícia: Reduções tarifárias por razões de abastecimento deverão ser publicadas
+2025-01-22 18:11:19,447 - INFO - Imagem inserida para a notícia: Publicada a nova versão do Programa Gerador de Escrituração – PGE, da EFD-Contribuições
+2025-01-22 18:11:19,451 - INFO - Imagem inserida para a notícia: Sentença exclui PIS/Cofins da própria base de cálculo
+2025-01-22 18:11:19,456 - INFO - Imagem inserida para a notícia: PGFN regulamenta dispensa de garantia em ações judiciais
+2025-01-22 18:11:19,462 - INFO - Imagem inserida para a notícia: Congresso articula derrubada de vetos sobre fundos na reforma tributária
+2025-01-22 18:11:20,348 - INFO - PDF gerado e salvo com sucesso como 'relatorio_noticias.pdf'.
+2025-01-22 18:11:20,349 - INFO - Imagem temporária removida: temp_images/Reforma_x_carga_tributária_dos_novos_tributos_sobre_consumo.jpg
+2025-01-22 18:11:20,349 - INFO - Imagem temporária removida: temp_images/De_voto_vencido_no_Carf_a_vencedor_no_STJ:_a_tributação_das_employee_stock_options.jpg
+2025-01-22 18:11:20,350 - INFO - Imagem temporária removida: temp_images/Acesso_a_dados_bancários_pelo_Fisco:_desafios_da_falta_de_regulamentação_estadual_e_o_uso_indevido_de_dados.jpg
+2025-01-22 18:11:20,350 - INFO - Imagem temporária removida: temp_images/Senado_pode_alterar_limites_para_enquadramento_no_Simples.jpg
+2025-01-22 18:11:20,350 - INFO - Imagem temporária removida: temp_images/Reduções_tarifárias_por_razões_de_abastecimento_deverão_ser_publicadas.jpg
+2025-01-22 18:11:20,351 - INFO - Imagem temporária removida: temp_images/Publicada_a_nova_versão_do_Programa_Gerador_de_Escrituração_–_PGE,_da_EFD-Contribuições.jpg
+2025-01-22 18:11:20,387 - INFO - Imagem temporária removida: temp_images/Sentença_exclui_PIS-Cofins_da_própria_base_de_cálculo.jpg
+2025-01-22 18:11:20,388 - INFO - Imagem temporária removida: temp_images/PGFN_regulamenta_dispensa_de_garantia_em_ações_judiciais.jpg
+2025-01-22 18:11:20,389 - INFO - Imagem temporária removida: temp_images/Congresso_articula_derrubada_de_vetos_sobre_fundos_na_reforma_tributária.jpg
+2025-01-22 18:11:20,393 - INFO - Iniciando o processo de envio de e-mail para sidineiandradesilva@gmail.com.
+2025-01-22 18:11:20,451 - INFO - Arquivo PDF relatorio_noticias.pdf anexado ao e-mail.
+2025-01-22 18:11:24,625 - INFO - E-mail enviado com sucesso para sidineiandradesilva@gmail.com.
+2025-01-22 18:11:24,817 - INFO - Email enviado para sidineiandradesilva@gmail.com com o PDF gerado.
+2025-01-22 18:11:24,818 - INFO - ['PGFN', 'reforma', 'Marco']
+2025-01-22 18:11:24,818 - INFO - Filtrando notícias para o email: arthur.lima.araujo@gmail.com com palavras-chave: ['PGFN', 'reforma', 'Marco']
+2025-01-22 18:11:24,818 - INFO - Iniciando o processo de filtragem de notícias para a data 22/01/2025.
+2025-01-22 18:11:27,459 - INFO - Obtidas 345 notícias para o filtro.
+2025-01-22 18:11:27,471 - INFO - 7 notícias filtradas e salvas no arquivo 'noticias_filtradas.json'.
+2025-01-22 18:11:27,878 - INFO - Página de rosto criada com sucesso.
+2025-01-22 18:11:33,667 - INFO - Imagem inserida para a notícia: Reforma x carga tributária dos novos tributos sobre consumo
+2025-01-22 18:11:33,670 - INFO - Imagem inserida para a notícia: Acesso a dados bancários pelo Fisco: desafios da falta de regulamentação estadual e o uso indevido de dados
+2025-01-22 18:11:33,674 - INFO - Imagem inserida para a notícia: Senado pode alterar limites para enquadramento no Simples
+2025-01-22 18:11:33,677 - INFO - Imagem inserida para a notícia: Publicada a nova versão do Programa Gerador de Escrituração – PGE, da EFD-Contribuições
+2025-01-22 18:11:33,680 - INFO - Imagem inserida para a notícia: Sentença exclui PIS/Cofins da própria base de cálculo
+2025-01-22 18:11:33,685 - INFO - Imagem inserida para a notícia: PGFN regulamenta dispensa de garantia em ações judiciais
+2025-01-22 18:11:33,691 - INFO - Imagem inserida para a notícia: Congresso articula derrubada de vetos sobre fundos na reforma tributária
+2025-01-22 18:11:34,223 - INFO - PDF gerado e salvo com sucesso como 'relatorio_noticias.pdf'.
+2025-01-22 18:11:34,223 - INFO - Imagem temporária removida: temp_images/Reforma_x_carga_tributária_dos_novos_tributos_sobre_consumo.jpg
+2025-01-22 18:11:34,224 - INFO - Imagem temporária removida: temp_images/Acesso_a_dados_bancários_pelo_Fisco:_desafios_da_falta_de_regulamentação_estadual_e_o_uso_indevido_de_dados.jpg
+2025-01-22 18:11:34,225 - INFO - Imagem temporária removida: temp_images/Senado_pode_alterar_limites_para_enquadramento_no_Simples.jpg
+2025-01-22 18:11:34,225 - INFO - Imagem temporária removida: temp_images/Publicada_a_nova_versão_do_Programa_Gerador_de_Escrituração_–_PGE,_da_EFD-Contribuições.jpg
+2025-01-22 18:11:34,226 - INFO - Imagem temporária removida: temp_images/Sentença_exclui_PIS-Cofins_da_própria_base_de_cálculo.jpg
+2025-01-22 18:11:34,227 - INFO - Imagem temporária removida: temp_images/PGFN_regulamenta_dispensa_de_garantia_em_ações_judiciais.jpg
+2025-01-22 18:11:34,227 - INFO - Imagem temporária removida: temp_images/Congresso_articula_derrubada_de_vetos_sobre_fundos_na_reforma_tributária.jpg
+2025-01-22 18:11:34,231 - INFO - Iniciando o processo de envio de e-mail para arthur.lima.araujo@gmail.com.
+2025-01-22 18:11:34,283 - INFO - Arquivo PDF relatorio_noticias.pdf anexado ao e-mail.
+2025-01-22 18:11:38,512 - INFO - E-mail enviado com sucesso para arthur.lima.araujo@gmail.com.
+2025-01-22 18:11:38,708 - INFO - Email enviado para arthur.lima.araujo@gmail.com com o PDF gerado.
+2025-01-22 18:11:38,709 - INFO - 192.168.1.94 - - [22/Jan/2025 18:11:38] "GET /process HTTP/1.1" 200 -
