@@ -51,15 +51,20 @@ def processar():
         try:
             app.logger.info(f"Filtrando notícias para o email: {email} com palavras-chave: {lista_palavras_chave}")
             noticias_filtradas = filtra_noticias(lista_palavras_chave, data_atual)
-            gera_pdf(noticias=noticias_filtradas)
-            envia_email(email, local_pdf)
-            os.remove(local_pdf)
-            app.logger.info(f"Email enviado para {email} com o PDF gerado.")
+            
+            # Verificar se há notícias filtradas
+            if noticias_filtradas:
+                gera_pdf(noticias=noticias_filtradas)
+                envia_email(email, local_pdf)
+                os.remove(local_pdf)
+                app.logger.info(f"Email enviado para {email} com o PDF gerado.")
+            else:
+                app.logger.info(f"Nenhuma notícia encontrada para o email {email} com as palavras-chave {lista_palavras_chave}. Não será enviado e-mail.")
+                
         except Exception as e:
             app.logger.error(f"Erro ao processar para o email {email}: {str(e)}")
     
     return 'Emails enviados!'
-
 
 # Adicionar endpoint para remover usuário do banco
 @app.route('/delete', methods=['POST'])
@@ -106,3 +111,5 @@ def register():
         app.logger.error(f"Erro ao tentar registrar assinantes: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+if __name__ == '__main__':
+    app.run(debug=True)
